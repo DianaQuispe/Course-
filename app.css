@@ -13,10 +13,11 @@
 }
 .course  *{
   background-color: #FFFFFF;
-margin: 2%;
+  margin: 5% 0%;
 }
-.navbar * {
+.navbar {
   background-color: grey;
+color: #0E0A0A;
 }
 .teacher {
   margin-bottom: 1.5em;
