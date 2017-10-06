@@ -27,10 +27,10 @@ class Home extends React.Component {
     );
   }
 }
-class Header extends React.Component {
+class Teachers extends React.Component {
   render() {
     return (
-      <div>
+      <div id="teachers">
         <div className="row">
           <div className=" col-md-6">
             <div className="card teacher">
@@ -140,7 +140,44 @@ class Header extends React.Component {
 class Nav extends React.Component {
   render() {
     return (
-     
+      <nav className="navbar navbar-inverse navbar-fixed-top">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button
+              type="button"
+              className="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+            </button>
+            <a className="navbar-brand" href="#">
+              <span className="material-icons">code</span>
+            </a>
+          </div>
+          <div>
+            <div className="collapse navbar-collapse" id="myNavbar">
+              <ul className="nav navbar-nav">
+                <li>
+                  <a href="#section1">HOME</a>
+                </li>
+                <li>
+                <a href="#/about">ABOUT</a>
+                </li>
+                <li>
+                  <a href='#/teachers'>TEACHERS</a>
+                </li>
+                <li>
+                <a href="#/repos">Repos</a>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     )
   }
 }
@@ -148,7 +185,6 @@ class About extends React.Component {
   render() {
     return (
       <div className="main-content">
-        <div id="section1">
         <h2>About</h2>
         <p>
           The front end course directory lists many of the courses we teach on
@@ -157,7 +193,6 @@ class About extends React.Component {
           and select a topic -- HTML, CSS, or JavaScript -- to see a list of our
           courses.
         </p>
-        </div>
       </div>
     );
   }
@@ -241,6 +276,9 @@ class App extends React.Component {
       case "/repos":
         Child = Repos;
         break;
+        case "/teachers":
+        Child = Teachers;
+        break;
       case "/repos/html":
         Child = Repos;
         propsForRepos = "html";
@@ -259,64 +297,16 @@ class App extends React.Component {
     return (
       <div className="container ">
         <div className="row">
+        <Nav/>
           <div className="col-md-8 col-md-offset-2 course">
-
-
-            {/* <Header /> */}
-            <header>App</header>
             <menu>
-              <ul>
-                <li>
-                  <a href="#/about">About</a>
-                </li>{" "}
-                <li>
-                  <a href="#/repos">Repos</a>
-                </li>
-              </ul>{" "}
-            </menu>
             {propsForRepos ? <Child route={propsForRepos} /> : <Child />}
+
+            </menu>
           </div>
         </div>
       </div>
     );
   }
 }
-{/* <nav className="navbar navbar-inverse navbar-fixed-top">
-<div className="container-fluid">
-  <div className="navbar-header">
-    <button
-      type="button"
-      className="navbar-toggle"
-      data-toggle="collapse"
-      data-target="#myNavbar"
-    >
-      <span className="icon-bar" />
-      <span className="icon-bar" />
-      <span className="icon-bar" />
-    </button>
-    <a className="navbar-brand" href="#">
-      <span className="material-icons">code</span>
-    </a>
-  </div>
-  <div>
-    <div className="collapse navbar-collapse" id="myNavbar">
-      <ul className="nav navbar-nav">
-        <li>
-          <a href="#section1">HOME</a>
-        </li>
-        <li>
-                  <a href="#/about">About</a>
-        </li>
-        <li>
-          <a href="#section2">TEACHERS</a>
-        </li>
-        <li>
-          <a href="#section3">COURSES</a>
-        </li>
-       
-      </ul>
-    </div>
-  </div>
-</div>
-</nav> */}
 ReactDOM.render(<App />, document.getElementById("container"));
