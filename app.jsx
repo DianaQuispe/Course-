@@ -31,121 +31,68 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        
-        <div className="container pt-5">
-          <div className="row">
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="images/nodestradamus.png"
-                  alt="Card image cap"
-                />
-                <div className="card-block">
-                  <h4 className="card-title">NodeStradamus</h4>
-                  <p className="card-text">
-                    NodeStra" is a software engineer and philosopher trying to
-                    leave the world better than he found it. He codes for
-                    non-profits, eCommerce, and large-scale web apps.{" "}
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
+       <div classname="container">
+        <nav className="navbar navbar-inverse navbar-fixed-top">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button
+type="button"
+className="navbar-toggle"
+data-toggle="collapse"
+data-target="#myNavbar">
+                <span className="icon-bar" />
+                <span className="icon-bar" />
+                <span className="icon-bar" />                        
+              </button>
+              <a className="navbar-brand" href="#">WebSiteName</a>
             </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="images/geo.png"
-                  alt="Card image cap"
-                />
-                <div className="card-block">
-                  <h4 className="card-title">Geo "Lo" Cation</h4>
-                  <p className="card-text">
-                    Geo is a JavaScript developer working on large-scale
-                    applications. He's also a teacher who strives to support
-                    students in removing all barriers to learning code and rock.{" "}
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="images/ecma.png"
-                  alt="Card image cap"
-                />
-                <div className="card-block">
-                  <h4 className="card-title">Ecma Scriptnstuff</h4>
-                  <p className="card-text">
-                    Ecma found her passion for computers and programming over 15
-                    years ago. She is excited to introduce people to the
-                    wonderful world of JavaScript.{" "}
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="images/jay.png"
-                  alt="Card image cap"
-                />
-                <div className="card-block">
-                  <h4 className="card-title">Jay Query</h4>
-                  <p className="card-text">
-                    Jay is a developer, author of CSS: The Missing Manual,
-                    JavaScript &amp; jQuery: The Missing Manual, and web
-                    development teacher.{" "}
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="images/json.png"
-                  alt="Card image cap"
-                />
-                <div className="card-block">
-                  <h4 className="card-title">Json Babel</h4>
-                  <p className="card-text">
-                    All of his professional life, Json has worked with computers
-                    online; he is a polyglot programmer and likes using the
-                    right tools for the job.{" "}
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
+            <div>
+              <div
+className="collapse navbar-collapse"
+id="myNavbar">
+                <ul className="nav navbar-nav">
+                  <li>
+<a href="#section1">
+Section 1
+</a>
+</li>
+                  <li>
+<a href="#section2">
+Section 2
+</a>
+</li>
+                  <li>
+<a href="#section3">
+Section 3
+</a>
+</li>
+                  <li className="dropdown">
+<a
+className="dropdown-toggle"
+data-toggle="dropdown"
+href="#">
+Section 4 <span className="caret" />
+</a>
+                    <ul className="dropdown-menu">
+                      <li>
+<a href="#section41">
+Section 4-1
+</a>
+</li>
+                      <li>
+<a href="#section42">
+Section 4-2
+</a>
+</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
+        </nav>    
+      </div>
+
       </div>
     );
   }
