@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+* {
+  color: #576366;
+  background-color: #5fcf80;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.teacher-img {
+  width: 100%;
+  border-radius: .3em;
+}
+.course  *{
+  background-color: #FFFFFF;
+margin: 2%;
+}
+.navbar * {
+  background-color: grey;
+}
+.teacher {
+  margin-bottom: 1.5em;
+}
+.teacher + .teacher {
+  margin-left: 2.54%;
+}
+.teacher:nth-child(2n+3) {
+  clear: left;
+  margin-left: 0;
+}
+.icn-logo {
+  background: #54606b;
+  color: #fff;
+}
+.icn-logo i {
+  font-size: 2.45em;
+  line-height: 0;
+  margin-top: 30px;
+}

@@ -31,77 +31,124 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-       <div classname="container">
-        <nav className="navbar navbar-inverse navbar-fixed-top">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button
-type="button"
-className="navbar-toggle"
-data-toggle="collapse"
-data-target="#myNavbar">
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-                <span className="icon-bar" />                        
-              </button>
-              <a className="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <div>
-              <div
-className="collapse navbar-collapse"
-id="myNavbar">
-                <ul className="nav navbar-nav">
-                  <li>
-<a href="#section1">
-Section 1
-</a>
-</li>
-                  <li>
-<a href="#section2">
-Section 2
-</a>
-</li>
-                  <li>
-<a href="#section3">
-Section 3
-</a>
-</li>
-                  <li className="dropdown">
-<a
-className="dropdown-toggle"
-data-toggle="dropdown"
-href="#">
-Section 4 <span className="caret" />
-</a>
-                    <ul className="dropdown-menu">
-                      <li>
-<a href="#section41">
-Section 4-1
-</a>
-</li>
-                      <li>
-<a href="#section42">
-Section 4-2
-</a>
-</li>
-                    </ul>
-                  </li>
-                </ul>
+        <div className="row">
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/angie.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
               </div>
             </div>
           </div>
-        </nav>    
-      </div>
-
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/nodestradamus.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/geo.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/ecma.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/jay.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className=" col-md-6">
+            <div className="card teacher">
+              <img
+                className="teacher-img "
+                src="img/json.png"
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h4 className="card-title">Card title</h4>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
+class Nav extends React.Component {
+  render() {
+    return (
+     
+    )
+  }
+}
 class About extends React.Component {
   render() {
     return (
       <div className="main-content">
+        <div id="section1">
         <h2>About</h2>
         <p>
           The front end course directory lists many of the courses we teach on
@@ -110,6 +157,7 @@ class About extends React.Component {
           and select a topic -- HTML, CSS, or JavaScript -- to see a list of our
           courses.
         </p>
+        </div>
       </div>
     );
   }
@@ -209,21 +257,66 @@ class App extends React.Component {
         Child = Home;
     }
     return (
-      <div>
-        <header>App</header> <Header />
-        <menu>
-          <ul>
-            <li>
-              <a href="#/about">About</a>
-            </li>{" "}
-            <li>
-              <a href="#/repos">Repos</a>
-            </li>
-          </ul>{" "}
-        </menu>
-        {propsForRepos ? <Child route={propsForRepos} /> : <Child />}
+      <div className="container ">
+        <div className="row">
+          <div className="col-md-8 col-md-offset-2 course">
+
+
+            {/* <Header /> */}
+            <header>App</header>
+            <menu>
+              <ul>
+                <li>
+                  <a href="#/about">About</a>
+                </li>{" "}
+                <li>
+                  <a href="#/repos">Repos</a>
+                </li>
+              </ul>{" "}
+            </menu>
+            {propsForRepos ? <Child route={propsForRepos} /> : <Child />}
+          </div>
+        </div>
       </div>
     );
   }
 }
+{/* <nav className="navbar navbar-inverse navbar-fixed-top">
+<div className="container-fluid">
+  <div className="navbar-header">
+    <button
+      type="button"
+      className="navbar-toggle"
+      data-toggle="collapse"
+      data-target="#myNavbar"
+    >
+      <span className="icon-bar" />
+      <span className="icon-bar" />
+      <span className="icon-bar" />
+    </button>
+    <a className="navbar-brand" href="#">
+      <span className="material-icons">code</span>
+    </a>
+  </div>
+  <div>
+    <div className="collapse navbar-collapse" id="myNavbar">
+      <ul className="nav navbar-nav">
+        <li>
+          <a href="#section1">HOME</a>
+        </li>
+        <li>
+                  <a href="#/about">About</a>
+        </li>
+        <li>
+          <a href="#section2">TEACHERS</a>
+        </li>
+        <li>
+          <a href="#section3">COURSES</a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</div>
+</nav> */}
 ReactDOM.render(<App />, document.getElementById("container"));
