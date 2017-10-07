@@ -1,5 +1,5 @@
 "use stritc";
-
+//Arrays:
 const TeacherList = [
   {
     name: "Angie McAngular",
@@ -202,13 +202,12 @@ const JSCourses = [
     id: "js-6"
   }
 ];
-
+//Clases
 class Home extends React.Component {
   render() {
     return (
       <div className="main-content home">
         <h2>Front End Course Directory</h2>
-
         <p>
           This fun directory is a project for the <em>React Router Basics</em>{" "}
           course on Treehouse.
@@ -251,158 +250,110 @@ class Teachers extends React.Component {
   render() {
     let teachers = TeacherList.map((teacher, index) => {
       return (
-        <li key={index} className="teacher">
+        <li key={teacher.id} className="teacher">
           <img className="teacher-img " src={teacher.img_src} alt="Teacher" />
-          <h3>{teacher.name}</h3>
-          <p>{teacher.bio} </p>
+          <h3>
+            {teacher.name}
+          </h3>
+          <p>
+            {teacher.bio}
+          </p>
         </li>
       );
     });
     return (
       <div className="main-content">
         <h2>Teachers</h2>
-        <ul className="group">{teachers}</ul>
+        <ul className="group">
+          {teachers}
+        </ul>
       </div>
     );
-  }
-}
-
-class CSSProducts extends React.Component {
-  render() {
-    let cssProducts = CSSCourses.map((a, b) => {
-      return (
-        <li key={b}>
-          <div className="courses row">
-            <div className="col-md-2">
-              <img src={a.img_src} alt="" />
-            </div>
-            <div className="col-md-10">
-              <span>
-                <h1>
-                  <p> {a.title}</p>
-                </h1>
-                <p>{a.description} </p>
-              </span>
-            </div>
-          </div>
-        </li>
-      );
-    });
-  }
-}
-class HTMLProducts extends React.Component {
-  render() {
-    let htmlProducts = HTMLCourses.map((a, b) => {
-      return (
-        <li key={b}>
-          <div className="courses row">
-            <div className="col-md-2">
-              <img src={a.img_src} alt="" />
-            </div>
-            <div className="col-md-10">
-              <span>
-                <h1>
-                  <p> {a.title}</p>
-                </h1>
-                <p>{a.description} </p>
-              </span>
-            </div>
-          </div>
-        </li>
-      );
-    });
-  }
-}
-class JSProducts extends React.Component {
-  render() {
-    let jsCourses = JSCourses.map((a, b) => {
-      return (
-        <li key={b}>
-          <div className="courses row">
-            <div className="col-md-2">
-              <img src={a.img_src} alt="" />
-            </div>
-            <div className="col-md-10">
-              <span>
-                <h1>
-                  <p> {a.title}</p>
-                </h1>
-                <p>{a.description} </p>
-              </span>
-            </div>
-          </div>
-        </li>
-      );
-    });
   }
 }
 
 class Courses extends React.Component {
   render() {
     const { route } = this.props;
-    let CurrentList = null;
+    let CurrentList = null; //es la lista actual
     switch (route) {
-      case "css":
-        CurrentList = CSSCourses.map((item, index) => {
-        return (
-          <li key={index} className="course media group"> 
-            <img className="course-img" src={item.img_src} alt="course"/>
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </li>);
+      case "css": //en caso de que sea css recorre el array CSSCourses
+        CurrentList = CSSCourses.map(item => {
+          return (
+            <li key={item.id} className="course media group">
+              <img className="course-img" src={item.img_src} alt="course" />
+              <div>
+                <h3>
+                  {item.title}
+                </h3>
+                <p>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          );
         });
         break;
-      case "javascript":
-      CurrentList = JSCourses.map((item, index) => {
-        return (
-          <li key={index} className="course media group"> 
-            <img className="course-img" src={item.img_src} alt="course"/>
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </li>);
+      case "javascript": //en caso de que sea javascript recorre el array JSCourses
+        CurrentList = JSCourses.map(item => {
+          return (
+            <li key={item.id} className="course media group">
+              <img className="course-img" src={item.img_src} alt="course" />
+              <div>
+                <h3>
+                  {item.title}
+                </h3>
+                <p>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          );
         });
         break;
       default:
-      CurrentList = HTMLCourses.map((item, index) => {
-        return (
-          <li key={index} className="course media group"> 
-            <img className="course-img" src={item.img_src} alt="course"/>
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </li>);
+        //en caso de que sea default recorre el array HTMLCourses
+        CurrentList = HTMLCourses.map(item => {
+          return (
+            <li key={item.id} className="course media group">
+              <img className="course-img" src={item.img_src} alt="course" />
+              <div>
+                <h3>
+                  {item.title}
+                </h3>
+                <p>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          );
         });
         break;
     }
-
-    return (
-      <div>
-        <div className="main-content courses">
-          <div className="course-header group">
-            <h2>Courses</h2>
-            <ul className="course-nav">
-              <li>
-                <a href="#/courses/html">HTML</a>
-              </li>
-              <li>
-                <a href="#/courses/css">CSS</a>
-              </li>
-              <li>
-                <a href="#/courses/javascript">JavaScript</a>
-              </li>
-            </ul>
-
-            <ul>{CurrentList}</ul>
-          </div>
-          {/* Write routes here... */}
+    return(// retorna las clases con el array elegido en  CurrentList
+    <div>
+      <div className="main-content courses">
+        <div className="course-header group">
+          <h2>Courses</h2>
+          <ul className="course-nav">
+            <li>
+              <a href="#/courses/html">HTML</a>
+            </li>
+            <li>
+              <a href="#/courses/css">CSS</a>
+            </li>
+            <li>
+              <a href="#/courses/javascript">JavaScript</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            {CurrentList}
+          </ul>
         </div>
       </div>
-    );
+    </div>);
   }
 }
 
@@ -413,6 +364,7 @@ class App extends React.Component {
       route: window.location.hash.substr(1)
     };
   }
+
   componentDidMount() {
     window.addEventListener("hashchange", () => {
       console.log(window.location.hash.substr(1));
@@ -421,6 +373,7 @@ class App extends React.Component {
       });
     });
   }
+
   render() {
     let Child;
     let propsForCourses = null;
@@ -450,30 +403,40 @@ class App extends React.Component {
         Child = Home;
     }
     return (
-      <div className="container">
+      <div data-reactroot className="container">
         <header>
           <span className="icn-logo">
             <i className="material-icons">code</i>
           </span>
           <ul className="main-nav">
             <li>
-              <a href="#/">Home</a>
+              <a aria-current="false" href="#/">
+                Home
+              </a>
             </li>
             <li>
-              <a href="#/about">About</a>
+              <a aria-current="false" href="#/about">
+                About
+              </a>
             </li>
             <li>
-              <a href="#/teachers">Teachers</a>
+              <a aria-current="false" href="#/teachers">
+                Teachers
+              </a>
             </li>
             <li>
-              <a href="#/courses">Courses</a>
+              <a aria-current="false" href="#/courses">
+                Courses
+              </a>
             </li>
           </ul>
         </header>
-        {propsForCourses ? <Child route={propsForCourses} /> : <Child />}
+        <div className="main-content">
+          {propsForCourses ? <Child route={propsForCourses} /> : <Child />}
+        </div>
       </div>
     );
   }
 }
-
+//todo se carga en 'container' en HTML
 ReactDOM.render(<App />, document.getElementById("container"));
