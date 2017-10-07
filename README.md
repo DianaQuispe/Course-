@@ -1,2 +1,4 @@
-# TimerInScoreboard
-Implementacion de un timer en el proyecto de Scoreboard
+# Courses con React
+Terminar una pagina con hash #
+* CSS completado 
+* JSX completado
